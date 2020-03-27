@@ -47,6 +47,8 @@ DELOREAN_CENTOS8 = "https://trunk.rdoproject.org/centos8-master/" \
 DELOREAN_DEPS_CENTOS8 = "https://trunk.rdoproject.org/centos8-master/" \
     "delorean-deps.repo"
 
+OPSTOOLS_COLLECTD = "https://raw.githubusercontent.com/prabiegx/tmp/master/opstools_collectd.repo"
+
 INSTALL_TYPE_CHOICES = ['binary', 'source', 'rdo', 'rhos']
 
 # TODO(mandre) check for file integrity instead of downloading from an HTTPS
@@ -1247,7 +1249,8 @@ def parse(conf, args, usage=None, prog=None,
         if LooseVersion(conf.base_tag) >= LooseVersion('8'):
             # Use CentOS 8 Delorean repos.
             conf.set_default('rpm_setup_config', [DELOREAN_CENTOS8,
-                                                  DELOREAN_DEPS_CENTOS8])
+                                                  DELOREAN_DEPS_CENTOS8,
+                                                  OPSTOOLS_COLLECTD])
         else:
             # Use Train packages on CentOS 7 due to python 2 drop.
             conf.set_default('openstack_release', 'train')
