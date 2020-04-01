@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Adds ''collectd-dcpmm'' package to ''collectd'' RHEL-based image.
+    The dcpmm plugin will collect Intel(R) Optane(TM) DC Persistent
+    Memory related performance statistics.
+
